@@ -19,6 +19,18 @@
   <strong>Image url:</strong>
   <%= @post.image_url %>
 </p>
+<% if @post.comments.count > 0 %>
+<p>
+  <strong>Comments:</strong>
+  <% @post.comments.each do |comment| %>
+   <p>
+      <strong><%= comment.author %> :</strong> <%= comment.content %>
+    </p>
+  <% end %>
+</p>
+<% else %>
+  <h1>none</h1>
+<% end %>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
