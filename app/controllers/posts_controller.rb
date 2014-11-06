@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_categories, only: [:edit, :new]
   # GET /posts
   # GET /posts.json
   def index
@@ -67,8 +67,12 @@ class PostsController < ApplicationController
       @post = Post.find(params[:id])
     end
 
+    def set_categories
+      @categories = Category.all
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:author, :title, :content, :image_url)
+      params.require(:post).permit(:author, :title, :content, :image_url, :category_id)
     end
 end

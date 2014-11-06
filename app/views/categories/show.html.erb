@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @category.name %>
+</p>
+
+<p><strong>ID:</strong>
+  <%= @category.id %>
+</p>
+
+<% if @posts.empty? %>
+  <p>Sin posts en este momento</p>
+<% else %>
+  <% @posts.each do |post| %>
+    <p>
+      Author: <%= post.author %>
+    </p>
+  <% end %>
+<% end %>
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>
