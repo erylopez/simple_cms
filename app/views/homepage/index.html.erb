@@ -1,0 +1,14 @@
+<h1>Blog - Simple CMS</h1>
+<ul class="float-right">
+  <li><a href="/">Home</a></li>
+  <li><a href="/posts">Posts</a></li>
+  <li><a href="/categories">Categories</a></li>
+</ul>
+<% @posts.each do |p| %>
+<div class="post-wraper">
+  <article>
+    <h2><%= p.title %></h2>
+    <p><%= p.content %></p>
+  </article>
+</div>
+<% end %>

@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+ul{
+  list-style: none;
+}
+
+li {
+  display: inline-block;
+}
+
+.float-right{
+  float: right;
+}
+
+li a {
+  text-decoration: none;
+}
