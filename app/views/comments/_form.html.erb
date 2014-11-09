@@ -19,10 +19,7 @@
     <%= f.label :content %><br>
     <%= f.text_area :content %>
   </div>
-  <div class="field">
-    <%= f.select :post_id, options_from_collection_for_select(@posts, "id", "title")%>
-
-  </div>
+  <%= f.hidden_field :post_id, :value => @post.id %>
   <div class="actions">
     <%= f.submit %>
   </div>

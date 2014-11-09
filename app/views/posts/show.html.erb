@@ -19,18 +19,22 @@
   <strong>Image url:</strong>
   <%= @post.image_url %>
 </p>
+<div class="comment-section">
 <% if @post.comments.count > 0 %>
-<p>
-  <strong>Comments:</strong>
-  <% @post.comments.each do |comment| %>
-   <p>
-      <strong><%= comment.author %> :</strong> <%= comment.content %>
+  <h2><strong>Comments:</strong></h2>
+<% @comments.each do |comment| %>
+  <div class="comment-block">
+    <p>
+      <strong><%= comment.author %>:</strong>
+      <%= comment.content %>
     </p>
-  <% end %>
-</p>
+  </div>
+<% end %>
+</div>
 <% else %>
   <h1>none</h1>
 <% end %>
+<%= render "comments/form"%>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
